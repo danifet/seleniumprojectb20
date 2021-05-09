@@ -16,6 +16,28 @@ public class P3_NavigationAndTitleVerification {
 
         driver.findElement(By.linkText("Gmail")).click();
 
+        String expectedTitle= "Gmail";
+        String actualTitle= driver.getTitle();
+
+        if (actualTitle.contains(expectedTitle)) {
+            System.out.println(" Title verification PASSED");
+
+        } else {
+            System.out.println(" Title verification FAILED");
+        }
+
+        driver.navigate().back();
+
+        String expectedGoogleTitle= "Google";
+        String actualGoogleTitle= driver.getTitle();
+
+        if (actualGoogleTitle.contains(expectedGoogleTitle)) {
+            System.out.println(" Title verification PASSED");
+
+        } else {
+            System.out.println(" Title verification FAILED");
+        }
+
 
     }
 }
